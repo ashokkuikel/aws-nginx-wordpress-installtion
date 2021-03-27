@@ -86,8 +86,6 @@ sudo mv /opt/bitnami/nginx/conf/bitnami/certs/server.key /opt/bitnami/nginx/conf
 sudo mv /opt/bitnami/nginx/conf/bitnami/certs/server.csr /opt/bitnami/nginx/conf/bitnami/certs/server.csr.old
 sudo ln -sf /opt/bitnami/letsencrypt/certificates/ashokkuikel.com.key /opt/bitnami/nginx/conf/bitnami/certs/server.key
 sudo ln -sf /opt/bitnami/letsencrypt/certificates/ashokkuikel.com.crt /opt/bitnami/nginx/conf/bitnami/certs/server.crt
-sudo ln -sf /opt/bitnami/letsencrypt/certificates/www.ashokkuikel.com.key /opt/bitnami/nginx/conf/bitnami/certs/server.key
-sudo ln -sf /opt/bitnami/letsencrypt/certificates/www.ashokkuikel.com.crt /opt/bitnami/nginx/conf/bitnami/certs/server.crt
 sudo chown -h  root:root /opt/bitnami/nginx/conf/bitnami/certs/server*
 sudo chmod 600 /opt/bitnami/nginx/conf/bitnami/certs/server*
 

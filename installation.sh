@@ -119,3 +119,17 @@ sudo crontab -e
 
 #Add the following lines to the crontab file and save it:
 0 0 1 * * /opt/bitnami/letsencrypt/scripts/renew-certificate.sh 2> /dev/null
+
+#Create Database and respect username to access the database
+mysql -u root -p
+
+create database akdb_wp76;
+create user '<db username>'@'localhost' identified by '<Insert String Password>';
+grant all privileges on <db username>.* to '<db username>'@'localhost';
+exit
+
+#Configure WordPress Plugin Authentication And Security
+sudo echo "define ( 'FS_METHOD', 'direct' );" >> /opt/bitnami/wordpress/wp-config.php
+
+sudo chmod 640 /opt/bitnami/wordpress/wp-config.php
+sudo chown bitnami:daemon /opt/bitnami/wordpress/wp-config.php
